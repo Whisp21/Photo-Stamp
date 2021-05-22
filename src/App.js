@@ -25,7 +25,7 @@ const App = (props) => {
   }
 
   const handleDelete = () => {
-    getStamps()
+    setStamps(getStamps);
   }
 
 
@@ -44,7 +44,8 @@ const App = (props) => {
         date={stamp.date}
         image={stamp.url}
         caption={stamp.caption}
-        handleDelete={handleDelete} />
+        handleDelete={handleDelete}
+        />
       ))}
       <Footer />
     </div>
