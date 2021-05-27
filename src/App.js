@@ -1,12 +1,18 @@
-import React, { useState, useEffect } from "react";
-import Header from "./Header";
-import CreateForm from "./CreateForm";
+import React, { useState, useEffect } from 'react';
+import Header from './Header';
+import CreateForm from './CreateForm';
 import PhotoStamp from './PhotoStamp';
 import Footer from './Footer';
-import firebase from "./firebase/firebase";
+import Loading from './Loading';
+import firebase from './firebase/firebase';
 
 const App = (props) => {
-  const [ stamps, setStamps] = useState([]);
+  const [ stamps, setStamps ] = useState([]);
+  const [ loading, setLoading ] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 4000)
+  },[])
 
   const getStamps = () => {
     const stampArray = []
@@ -37,16 +43,19 @@ const App = (props) => {
     <div className="app-div">
       <Header />
       <CreateForm getStamps={getStamps} />
-      {stamps && stamps.map((stamp, index) => (
-        <PhotoStamp
-        key={index}
-        id={stamp.id}
-        date={stamp.date}
-        image={stamp.url}
-        caption={stamp.caption}
-        handleDelete={handleDelete}
-        />
-      ))}
+      {loading === false ?
+        stamps && stamps.map((stamp, index) => (
+          <PhotoStamp
+          key={index}
+          id={stamp.id}
+          date={stamp.date}
+          image={stamp.url}
+          caption={stamp.caption}
+          handleDelete={handleDelete}
+          />
+        )) : <Loading />
+      }
+
       <Footer />
     </div>
   );
