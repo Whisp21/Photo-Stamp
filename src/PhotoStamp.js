@@ -10,7 +10,7 @@ const PhotoStamp = (props) => {
     imageRef.delete().then(() => {
       console.log('Deleted from storage')
     });
-    props.handleDelete();
+    props.handleDelete(props.id);
     }
 
   return (

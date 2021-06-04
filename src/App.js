@@ -15,8 +15,8 @@ const App = (props) => {
   },[])
 
   const getStamps = () => {
-    const stampArray = []
     firebase.database().ref('stamps').on('value', (snapshot) => {
+    const stampArray = [];
       snapshot.forEach((child) => {
         stampArray.push({
           id: child.key,
@@ -30,8 +30,8 @@ const App = (props) => {
     })
   }
 
-  const handleDelete = () => {
-    setStamps(getStamps);
+  const handleDelete = (id) => {
+    setStamps(stamps.filter((stamp) => stamp.id !== id));
   }
 
 
