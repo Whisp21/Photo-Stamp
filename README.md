@@ -9,11 +9,11 @@
 3. [Challenges](#challenges)
 4. [How to use the app](#usage)
 
-## What this app does {#overview}:
+## What this app does (#overview):
 
 Photo Stamp is a web app that stores your favourite photos online so you will never lose them! Each photo is saved as a Stamp. Once saved, the Stamps display in a polaroid style in your home page. Each Stamp takes the date when the photo was taken as well as a caption.
 
-## Technologies used {#technologies}:
+## Technologies used (#technologies):
 
 ### - React⚡
 
@@ -27,13 +27,13 @@ Firebase made it really simple to implement user login and setting up a database
 
 When using multiple stylesheets, I like to use SASS. I find that creating and using variables, nested syntax and using mixins are great features to have when managing the styling of a project with multiple components.
 
-## Challenges I faced {#challenges}: 
+## Challenges I faced (#challenges): 
 
 Implementing the user login and private routing was a daunting task - it is a feature that nearly all web and mobile apps have but it is a feature that can be difficult to set up and easy to mess up. But the challenge was worth the outcome! Firebase made it very easy to get user login setup. The private routing (fetching and displaying the Stamps specific to the current user logged in) required some more research but at the end of the day, it works great! If I ever need to implement these features again, I will be using the project as a reference.
 
 ---
 
-# Getting Started with Create React App {#usage}
+# Getting Started with Create React App (#usage)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
